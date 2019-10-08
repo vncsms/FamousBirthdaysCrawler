@@ -24,7 +24,7 @@ birthdays = famous.get_all_people_birthday()
 ## Output example:
 
 ```
-{
+[{
     "avatar": "https://www.famousbirthdays.com/faces/holland-tom-image.jpg",
     "birth_day": 1,
     "birth_month": 6,
@@ -32,6 +32,6 @@ birthdays = famous.get_all_people_birthday()
     "profession": "Movie Actor",
     "title": "Tom Holland",
     "year": 1996
-}
+},....]
 
 ```
