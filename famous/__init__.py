@@ -109,7 +109,10 @@ def get_person_information(url):
     '''
 
     person_title = soup.find('div', class_='person-title')
-    person['profession'] = person_title.get_text().replace('\n', '')
+    if person_title:
+        person['profession'] = person_title.get_text().replace('\n', '')
+    else:
+        person['profession'] = ''
 
     '''
         Get title
