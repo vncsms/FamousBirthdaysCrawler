@@ -105,6 +105,13 @@ def get_person_information(url):
     soup = BeautifulSoup(response.text, 'html.parser')
 
     '''
+        Get profession
+    '''
+
+    person_title = soup.find('div', class_='person-title')
+    person['profession'] = person_title.get_text().replace('\n', '')
+
+    '''
         Get title
     '''
 
