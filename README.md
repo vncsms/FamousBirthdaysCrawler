@@ -2,7 +2,7 @@
 
 Crawler to get all birthdays from the site: https://www.famousbirthdays.com/
 
-## Requeriments:
+## Requirements:
 `python 3.+` and `virtualenv`
 
 ## Install:
