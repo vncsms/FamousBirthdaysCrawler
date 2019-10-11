@@ -181,4 +181,18 @@ def get_person_information(url):
     except ValueError:
         return None
 
+    '''
+        Is dead?
+    '''
+
+    try:
+        age_container = soup.find('i', class_='icn-age')
+        age_container_text = age_container.nextSibling.nextSibling.get_text()
+        if age_container and 'Death' in age_container_text:
+            person['death'] = True
+        else:
+            person['death'] = False
+    except:
+        person['death'] = False
+
     return person
