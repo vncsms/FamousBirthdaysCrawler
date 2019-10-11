@@ -19,6 +19,8 @@ import famous
 birthdays = famous.get_all_people_birthday_day('june', 1)
 #or if you want of the all year
 birthdays = famous.get_all_people_birthday()
+#or if you want by month
+birthdays = famous.get_all_people_month('june')
 ```
 
 ## Output example:
