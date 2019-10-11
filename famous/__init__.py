@@ -48,6 +48,33 @@ def get_all_people_birthday_day(month, day):
     return persons
 
 
+def get_all_people_birthday_month(month):
+
+    persons = []
+
+    if month not in MONTHS:
+        return {'detail': 'month not found'}
+
+    for day in range(1, MONTHS[month]['total'] + 1):
+
+            url = MAIN_URL + '/' + month + str(day) + '.html'
+
+            response = requests.get(url)
+
+            if response.status_code != 200:
+                continue
+
+            persons_temp = html_extract_day_page(response.text)
+
+            for person in persons_temp:
+                person['birth_month'] = MONTHS[month]['id']
+                person['birth_day'] = day
+
+            persons += persons_temp
+
+    return persons
+
+
 def get_all_people_birthday():
 
     persons = []
